@@ -33,7 +33,6 @@ export default function CreateMessage() {
         createdAt: serverTimestamp(),
       });
 
-      // Redirect to waiting page with slug
       navigate(`/link-generated/${slug}`);
     } catch (error) {
       console.error("Error creating conversation:", error);
@@ -44,14 +43,13 @@ export default function CreateMessage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-white">
-      <h1 className="text-3xl font-bold mb-6">Openly</h1>
-
-      <div className="w-full max-w-md shadow-lg rounded-2xl p-6">
-        <h2 className="text-xl font-semibold mb-4">Write a Message</h2>
-
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-10 bg-white text-center">
+      <h1 className="text-3xl md:text-4xl font-bold mb-6">
+        Write Your Honest Message
+      </h1>
+      <div className="w-full max-w-md bg-gray-50 rounded-2xl shadow-lg p-6">
         <textarea
-          className="w-full h-32 p-3 border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-black"
+          className="w-full h-32 p-4 border border-gray-300 rounded-xl resize-none focus:ring-2 focus:ring-black"
           placeholder="Be real. Say what matters."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -60,7 +58,7 @@ export default function CreateMessage() {
 
         <button
           onClick={handleGenerate}
-          className="w-full mt-4 bg-black text-white py-2 rounded-xl hover:bg-gray-900 disabled:opacity-50"
+          className="w-full mt-6 bg-black text-white py-3 rounded-xl hover:bg-gray-900 disabled:opacity-50"
           disabled={loading}
         >
           {loading ? "Generating..." : "Generate Link"}

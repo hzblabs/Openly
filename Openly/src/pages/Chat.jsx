@@ -96,11 +96,11 @@ export default function Chat() {
     <div className="min-h-screen bg-white px-4 py-6 flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-4">Openly</h1>
 
-      <div className="w-full max-w-md flex-1 bg-gray-50 rounded-xl p-4 mb-4 overflow-y-auto max-h-[60vh]">
+      <div className="w-full max-w-md flex-1 bg-gray-50 rounded-xl p-4 mb-4 overflow-y-auto max-h-[65vh]">
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`mb-3 p-3 rounded-xl max-w-xs ${
+            className={`mb-3 p-3 rounded-xl max-w-[80%] ${
               msg.sender === sender
                 ? "ml-auto bg-black text-white"
                 : "mr-auto bg-gray-200 text-black"
